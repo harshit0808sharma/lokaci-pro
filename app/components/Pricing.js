@@ -9,7 +9,7 @@ const PricingPlans = () => {
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Simple Pricing That Pays for Itself</h2>
         <p className="text-lg text-gray-700 italic mb-12">
-          No contracts. No hidden fees. Cancel anytime. But you won't want to.
+         {"No contracts. No hidden fees. Cancel anytime. But you won't want to."}
         </p>
 
         <div className="grid gap-8 md:grid-cols-3">

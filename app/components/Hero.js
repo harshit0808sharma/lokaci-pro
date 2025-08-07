@@ -17,7 +17,7 @@ const Hero = () => {
 
         {/* Paragraph */}
         <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-          From missed appointments to manual billing nightmares — we've solved every problem that's costing you customers and sleep.
+          {"From missed appointments to manual billing nightmares — we've solved every problem that's costing you customers and sleep."}
         </p>
 
         {/* CTA Buttons */}

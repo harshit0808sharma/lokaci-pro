@@ -67,7 +67,7 @@ const Footer = () => {
         <div>
           <h3 className="font-bold text-lg mb-4">📈 Success Story</h3>
           <p className="text-sm italic mb-2">
-            "Increased revenue by 52% and reduced admin time by 70% in just 2 months with Lokaci Pro. Now I can focus on what I love – making customers beautiful."
+            {"Increased revenue by 52% and reduced admin time by 70% in just 2 months with Lokaci Pro. Now I can focus on what I love – making customers beautiful."}
           </p>
           <p className="text-sm font-semibold">– Neha Gupta, Green Leaf Salon, Pune</p>
         </div>

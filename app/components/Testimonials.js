@@ -21,7 +21,7 @@ const Testimonials = () => {
                   <FaStar key={i} className="text-yellow-500 text-sm" />
                 ))}
               </div>
-              <p className="text-gray-800 mb-4 italic">"{t.review}"</p>
+              <p className="text-gray-800 mb-4 italic">{t.review}</p>
               <p className="font-semibold text-black">{t.name}</p>
               <p className="text-sm text-gray-600">{t.salon}</p>
             </div>
