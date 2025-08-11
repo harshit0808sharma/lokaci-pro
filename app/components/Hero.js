@@ -40,8 +40,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            From missed appointments to manual billing nightmares – we've solved every
-            problem that's costing you customers and sleep.
+            {"From missed appointments to manual billing nightmares - we've solved every problem that's costing you customers and sleep."}
           </motion.p>
 
           <motion.div

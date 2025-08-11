@@ -27,7 +27,7 @@ const PricingPlans = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          No contracts. No hidden fees. Cancel anytime. But you won't want to.
+          {"No contracts. No hidden fees. Cancel anytime. But you won't want to."}
         </motion.p>
 
         {/* Pricing Cards */}
