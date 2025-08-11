@@ -25,8 +25,8 @@ export default function Home() {
         <Testimonials/>
         <CTASection/>
         <FAQ/>
-        <Bonus/>
         <Footer/>
+        <Bonus/>
       </div>
     </>
   );

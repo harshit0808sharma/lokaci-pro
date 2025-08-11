@@ -10,7 +10,7 @@ const trustPoints = [
 
 const CTASection = () => {
   return (
-    <section className="bg-indigo-700 text-white w-full py-16 px-6">
+    <section className="bg-black text-white w-full py-16 px-6">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Join 3,000+ Salon Owners Who Chose Growth Over Chaos

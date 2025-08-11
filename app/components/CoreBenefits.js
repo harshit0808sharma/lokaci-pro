@@ -1,12 +1,19 @@
 'use client'
 import { useContext } from "react";
 import { HomeContext } from "../context/HomeContext";
+import { motion } from "framer-motion";
 
 const CoreBenefits = () => {
-  const {benefits} = useContext(HomeContext)
+  const { benefits } = useContext(HomeContext);
+
   return (
     <section className="w-full bg-white py-16 px-6">
-      <div className="max-w-6xl mx-auto text-center">
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex-1 max-w-6xl mx-auto text-center"
+      >
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
           Why 3,000+ Salon Owners Choose Lokaci Pro Over Everything Else
         </h2>
@@ -16,8 +23,11 @@ const CoreBenefits = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
           {benefits.map((benefit, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.6 }}
               className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition cursor-pointer"
             >
               <div className="text-3xl mb-4">{benefit.icon}</div>
@@ -25,10 +35,10 @@ const CoreBenefits = () => {
                 {benefit.title}
               </h3>
               <p className="text-gray-700 text-sm">{benefit.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

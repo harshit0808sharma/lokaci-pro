@@ -4,6 +4,7 @@ import { MdVideoLibrary } from "react-icons/md";
 import { FaRegClock } from "react-icons/fa";
 import { BsCameraVideo } from "react-icons/bs";
 import { HomeContext } from "../context/HomeContext";
+import salonImg from '../../public/assets/images/salonImg4.png'
 
 const VideoSection = () => {
     const { videoData } = useContext(HomeContext);
@@ -21,15 +22,18 @@ const VideoSection = () => {
                                 <p className="text-lg">Video not available</p>
                             </div>
                         ) : (
-                            <video
-                                className="w-full"
-                                controls
-                                onError={() => setError(true)}
-                                poster="/poster.jpg"
-                            >
-                                <source src={url} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
+                            <div className="w-full aspect-video">
+                                <video
+                                    className="w-full h-full object-cover"
+                                    controls
+                                    onError={() => setError(true)}
+                                    poster={salonImg.src}
+                                >
+                                    <source src={url} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+
                         )}
                     </div>
 

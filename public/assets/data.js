@@ -1,4 +1,5 @@
 import { FaBolt, FaMobileAlt, FaMoneyBillWave } from "react-icons/fa";
+// import video from '../../public/assets/video/salonVideo.mp4'
 
 
 export const benefits = [
@@ -103,7 +104,7 @@ export const plans = [
       "✅ Daily/weekly reports",
       "✅ Phone & chat support"
     ],
-    note: "*Most popular for new salon owners*",
+    note: "Most popular for new salon owners",
     highlight: false,
   },
   {
@@ -121,7 +122,7 @@ export const plans = [
       "✅ Customer retention campaigns",
       "✅ Package & combo deals"
     ],
-    note: "*Recommended for most salons*",
+    note: "Recommended for most salons",
     highlight: true,
   },
   {
@@ -139,7 +140,7 @@ export const plans = [
       "✅ Custom integrations",
       "✅ Dedicated account manager"
     ],
-    note: "*Perfect for salon chains*",
+    note: "Perfect for salon chains",
     highlight: false,
   },
 ];
@@ -215,10 +216,68 @@ export const faqs = [
 ];
 
 export const videoData = {
-  url: "",
+  url: "../assets/video/salonVideo.mp4",
   title: "Lokaci Pro Salon Management Demo",
   description:
     "See how Lokaci helps salons save time, boost revenue, and delight customers.",
   category: "Salon Management",
   duration: "3 min 45 sec",
 };
+
+export const teamMembers = [
+  {
+    id: 1,
+    name: "Priya Sharma",
+    role: "Senior Hair Stylist",
+    bio: "Priya has over 10 years of experience in cutting-edge hairstyles and color trends. Passionate about making you look your best.",
+    photo: "",
+    socials: {
+      instagram: "",
+      facebook: "",
+    },
+  },
+  {
+    id: 2,
+    name: "Rahul Mehta",
+    role: "Makeup Artist",
+    bio: "Rahul specializes in bridal and event makeup, ensuring every client shines on their special day.",
+    photo: "",
+    socials: {
+      instagram: "",
+      facebook: "",
+    },
+  },
+  {
+    id: 3,
+    name: "Neha Gupta",
+    role: "Nail Technician",
+    bio: "Neha brings creativity and precision to nail art and treatments, offering the latest styles and trends.",
+    photo: "",
+    socials: {
+      instagram: "",
+      facebook: "",
+    },
+  },
+  {
+    id: 4,
+    name: "Karan Singh",
+    role: "Massage Therapist",
+    bio: "Karan's expert massage techniques help you relax and rejuvenate after a busy day.",
+    photo: "",
+    socials: {
+      instagram: "",
+      facebook: "",
+    },
+  },
+  {
+    id: 5,
+    name: "other one",
+    role: "other...",
+    bio: "message...",
+    photo: "",
+    socials: {
+      instagram: "",
+      facebook: "",
+    },
+  },
+];

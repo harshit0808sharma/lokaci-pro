@@ -1,12 +1,12 @@
 'use client'
 import React, { createContext } from "react";
-import { benefits, steps, plans, testimonials, faqs, videoData } from "@/public/assets/data";
+import { benefits, steps, plans, testimonials, faqs, videoData, teamMembers } from "@/public/assets/data";
 
 export const HomeContext = createContext();
 
 export const HomeProvider = ({ children }) => {
   return (
-    <HomeContext.Provider value={{ benefits, steps, plans, testimonials, faqs, videoData }}>
+    <HomeContext.Provider value={{ benefits, steps, plans, testimonials, faqs, videoData, teamMembers }}>
       {children}
     </HomeContext.Provider>
   );
