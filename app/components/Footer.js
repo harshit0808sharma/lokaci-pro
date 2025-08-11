@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaEnvelope, FaPhone, FaWhatsapp, FaMapMarkerAlt, FaInstagram, FaFacebook} from "react-icons/fa";
 
 const Footer = () => {
@@ -32,12 +33,12 @@ const Footer = () => {
         <div>
           <h3 className="font-bold text-lg mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:underline">About Lokaci</a></li>
-            <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-            <li><a href="#" className="hover:underline">Terms of Service</a></li>
-            <li><a href="#" className="hover:underline">Pricing</a></li>
-            <li><a href="#" className="hover:underline">Support Center</a></li>
-            <li><a href="#" className="hover:underline">Book Demo</a></li>
+            <li><Link href="/about" className="hover:underline">About Lokaci</Link></li>
+            <li><Link href="/" clLinkssNLinkme="hover:underline">PrivLinkcy Policy</Link></li>
+            <li><Link href="/" className="hover:underline">Terms of Service</Link></li>
+            <li><Link href="/pricing" className="hover:underline">Pricing</Link></li>
+            <li><Link href="/" className="hover:underline">Support Center</Link></li>
+            <li><Link href="/video" className="hover:underline">Book Demo</Link></li>
           </ul>
         </div>
 
@@ -47,7 +48,7 @@ const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2">
               <FaInstagram className="text-pink-500" />
-              <a href="#" className="hover:underline">@lokacipro</a>
+              <Link href="/" className="hover:underline">@lokacipro</Link>
             </li>
             <li className="flex items-center gap-2">
               <FaWhatsapp className="text-green-400" />

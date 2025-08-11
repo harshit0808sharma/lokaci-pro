@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaCheckCircle, FaPhone } from 'react-icons/fa';
 
 const trustPoints = [
@@ -20,12 +21,12 @@ const CTASection = () => {
         </p>
 
         {/* Primary CTA */}
-        <a
-          href="#"
+        <Link
+          href="/"
           className="inline-block bg-white text-indigo-700 font-semibold text-lg px-8 py-3 rounded-md hover:bg-gray-100 transition"
         >
           Start My Free Demo – See Results in 24 Hours
-        </a>
+        </Link>
 
         {/* Secondary CTA */}
         <div className="mt-4 text-sm flex items-center justify-center gap-2">
