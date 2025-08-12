@@ -1,12 +1,13 @@
 "use client";
 import { HomeContext } from "@/app/context/HomeContext";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useContext } from "react";
 
 
 export default function AwardsAchievements() {
   const { awards } = useContext(HomeContext);
-  
+
   return (
     <section className="bg-gray-100 py-16">
       <div className="max-w-6xl mx-auto px-6">
@@ -30,7 +31,7 @@ export default function AwardsAchievements() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition"
             >
-              <img
+              <Image
                 src={award.image}
                 alt={award.title}
                 className="w-20 h-20 object-contain mx-auto mb-4"

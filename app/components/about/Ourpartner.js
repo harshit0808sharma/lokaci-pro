@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const partners = [
   { name: "L'Oréal", logo: "/assets/images/partner1.png" },
@@ -33,7 +34,7 @@ export default function OurPartners() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="flex items-center justify-center bg-pink-50 p-4 rounded-xl shadow hover:shadow-lg transition"
             >
-              <img
+              <Image
                 src={partner.logo}
                 alt={partner.name}
                 className="w-32 h-16 object-contain"

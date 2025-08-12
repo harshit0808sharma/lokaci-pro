@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const galleryImages = [
   "/assets/images/salonImg5.jpg",
@@ -34,7 +35,7 @@ export default function SalonGallery() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition"
             >
-              <img
+              <Image
                 src={src}
                 alt={`Salon view ${index + 1}`}
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"

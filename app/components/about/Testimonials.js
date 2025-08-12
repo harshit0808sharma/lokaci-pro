@@ -1,6 +1,7 @@
 "use client";
 import { HomeContext } from "@/app/context/HomeContext";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { useContext, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -54,7 +55,7 @@ export default function ClientTestimonials() {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
             >
-              <img
+              <Image
                 src={testimonials[currentIndex].image}
                 alt={testimonials[currentIndex].name}
                 className="w-20 h-20 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow"

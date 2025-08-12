@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function WhyChooseUs() {
   return (
@@ -15,7 +16,7 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.7 }}
           className="flex-1"
         >
-          <img
+          <Image
             src="/assets/images/salonImg5.jpg"
             alt="Why Choose Us"
             className="rounded-3xl shadow-lg object-cover w-full h-[400px]"
