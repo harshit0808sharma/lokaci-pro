@@ -19,26 +19,26 @@ const Footer = () => {
           <ul className="space-y-4 text-sm">
             <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
               <FaEnvelope className="text-pink-500" size={20} />
-              <a href="mailto:hello@lokaci.com" className="hover:underline">
+              <Link href="/" className="hover:underline">
                 hello@lokaci.com
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
               <FaPhone className="text-pink-500" size={20} />
-              <a href="tel:+91XXXXX" className="hover:underline">
+              <Link href="/" className="hover:underline">
                 +91-XXXXX-XXXXX
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
               <FaWhatsapp className="text-green-400" size={20} />
-              <a
-                href="https://wa.me/91XXXXX"
+              <Link
+                href="/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
                 +91-XXXXX-XXXXX
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
               <FaMapMarkerAlt className="text-red-400" size={20} />
@@ -90,14 +90,14 @@ const Footer = () => {
           <ul className="space-y-4 text-sm">
             <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
               <FaInstagram className="text-pink-500" size={20} />
-              <a
-                href="https://instagram.com/lokacipro"
+              <Link
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
                 @lokacipro
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
               <FaWhatsapp className="text-green-400" size={20} />
@@ -120,7 +120,7 @@ const Footer = () => {
             {"Increased revenue by 52% and reduced admin time by 70% in just 2 months with Lokaci Pro. Now I can focus on what I love – making customers beautiful."}
           </p>
           <p className="text-sm font-semibold text-pink-500">
-            – Neha Gupta, Green Leaf Salon, Pune
+            {"– Neha Gupta, Green Leaf Salon, Pune"}
           </p>
         </div>
       </div>
