@@ -32,11 +32,7 @@ export default function ClientTestimonials() {
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-gray-600 mb-6">
-            Our customers are our biggest cheerleaders! Here’s what they have
-            to say about our salon’s services, ambiance, and friendly staff.
-            Your trust keeps us going.
-          </p>
+          <p className="text-gray-600 mb-6">{"Our customers are our biggest cheerleaders! Here’s what they have to say about our salon’s services, ambiance, and friendly staff. Your trust keeps us going. "}</p>
           <p className="text-pink-500 font-semibold">
             Join hundreds of happy clients today.
           </p>
