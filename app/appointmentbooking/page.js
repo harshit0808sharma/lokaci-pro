@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { motion } from 'framer-motion';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const services = [
   "Haircut",
@@ -34,12 +37,10 @@ export default function AppointmentBooking() {
       toast.error("Please fill all fields");
       return false;
     }
-    // Basic email check
     if (!/\S+@\S+\.\S+/.test(email)) {
       toast.error("Please enter a valid email");
       return false;
     }
-    // Basic phone check (10 digits)
     if (!/^\d{10}$/.test(phone)) {
       toast.error("Please enter a valid 10-digit phone number");
       return false;
@@ -52,7 +53,6 @@ export default function AppointmentBooking() {
     if (!validateForm()) return;
 
     setLoading(true);
-
     setTimeout(() => {
       setLoading(false);
       toast.success("Appointment booked successfully!");
@@ -68,16 +68,23 @@ export default function AppointmentBooking() {
   };
 
   return (
-    <section className="min-h-screen bg-gray-50 flex items-center justify-center px-6 py-16">
-      <div className="max-w-3xl w-full bg-white rounded-xl shadow-lg p-10">
-        <h1 className="text-4xl font-bold mb-8 text-center text-gray-700">
+   <>
+    <Header/>
+     <section className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-pink-100 flex items-center justify-center px-6 py-20 mt-10">
+      <motion.div
+        className="max-w-3xl w-full bg-white rounded-3xl shadow-2xl p-12 md:p-16"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        <h1 className="text-4xl font-extrabold mb-8 text-pink-700 text-center tracking-wide">
           Book Your Appointment
         </h1>
 
-        <form className="space-y-6" onSubmit={handleSubmit}>
-
-          <div>
-            <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+        <form className="space-y-8" onSubmit={handleSubmit} noValidate>
+          {/* Name */}
+          <motion.div whileFocusWithin={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+            <label htmlFor="name" className="block text-pink-700 font-semibold mb-3">
               Full Name
             </label>
             <input
@@ -87,13 +94,14 @@ export default function AppointmentBooking() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Your full name"
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="w-full px-5 py-3 border-2 border-pink-300 rounded-xl focus:outline-none focus:border-pink-600 transition"
               required
             />
-          </div>
+          </motion.div>
 
-          <div>
-            <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+          {/* Email */}
+          <motion.div whileFocusWithin={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+            <label htmlFor="email" className="block text-pink-700 font-semibold mb-3">
               Email Address
             </label>
             <input
@@ -103,13 +111,14 @@ export default function AppointmentBooking() {
               value={formData.email}
               onChange={handleChange}
               placeholder="you@example.com"
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="w-full px-5 py-3 border-2 border-pink-300 rounded-xl focus:outline-none focus:border-pink-600 transition"
               required
             />
-          </div>
+          </motion.div>
 
-          <div>
-            <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">
+          {/* Phone */}
+          <motion.div whileFocusWithin={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+            <label htmlFor="phone" className="block text-pink-700 font-semibold mb-3">
               Phone Number
             </label>
             <input
@@ -119,16 +128,16 @@ export default function AppointmentBooking() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="10-digit number"
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
-              required
               maxLength={10}
+              className="w-full px-5 py-3 border-2 border-pink-300 rounded-xl focus:outline-none focus:border-pink-600 transition"
+              required
             />
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            <div>
-              <label htmlFor="date" className="block text-gray-700 font-semibold mb-2">
+          {/* Date & Time */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div whileFocusWithin={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+              <label htmlFor="date" className="block text-pink-700 font-semibold mb-3">
                 Date
               </label>
               <input
@@ -137,14 +146,14 @@ export default function AppointmentBooking() {
                 type="date"
                 value={formData.date}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-5 py-3 border-2 border-pink-300 rounded-xl focus:outline-none focus:border-pink-600 transition"
                 required
-                min={new Date().toISOString().split('T')[0]} // no past dates
+                min={new Date().toISOString().split('T')[0]}
               />
-            </div>
+            </motion.div>
 
-            <div>
-              <label htmlFor="time" className="block text-gray-700 font-semibold mb-2">
+            <motion.div whileFocusWithin={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+              <label htmlFor="time" className="block text-pink-700 font-semibold mb-3">
                 Time
               </label>
               <input
@@ -153,17 +162,17 @@ export default function AppointmentBooking() {
                 type="time"
                 value={formData.time}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-5 py-3 border-2 border-pink-300 rounded-xl focus:outline-none focus:border-pink-600 transition"
                 required
                 min="09:00"
                 max="20:00"
               />
-            </div>
-
+            </motion.div>
           </div>
 
-          <div>
-            <label htmlFor="service" className="block text-gray-700 font-semibold mb-2">
+          {/* Service */}
+          <motion.div whileFocusWithin={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+            <label htmlFor="service" className="block text-pink-700 font-semibold mb-3">
               Choose Service
             </label>
             <select
@@ -171,7 +180,7 @@ export default function AppointmentBooking() {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="w-full px-5 py-3 border-2 border-pink-300 rounded-xl focus:outline-none focus:border-pink-600 transition"
               required
             >
               <option value="">Select a service</option>
@@ -179,19 +188,23 @@ export default function AppointmentBooking() {
                 <option key={i} value={srv}>{srv}</option>
               ))}
             </select>
-          </div>
+          </motion.div>
 
-          <button
+          <motion.button
             type="submit"
             disabled={loading}
-            className={`w-full py-3 rounded-md font-semibold text-white cursor-pointer ${
-              loading ? "bg-gray-300 cursor-not-allowed" : "bg-gray-600 hover:bg-gray-700"
-            } transition`}
+            whileTap={{ scale: 0.97 }}
+            className={`w-full py-4 rounded-xl font-semibold text-white shadow-lg transition ${loading
+                ? "bg-pink-300 cursor-not-allowed"
+                : "bg-pink-600 hover:bg-pink-700"
+              }`}
           >
             {loading ? "Booking..." : "Book Appointment"}
-          </button>
+          </motion.button>
         </form>
-      </div>
+      </motion.div>
     </section>
+    <Footer/>
+   </>
   );
 }

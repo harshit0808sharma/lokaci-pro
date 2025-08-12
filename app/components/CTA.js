@@ -22,7 +22,7 @@ const CTASection = () => {
 
         {/* Primary CTA */}
         <Link
-          href="/"
+          href="/demo"
           className="inline-block bg-white text-indigo-700 font-semibold text-lg px-8 py-3 rounded-md hover:bg-gray-100 transition"
         >
           Start My Free Demo – See Results in 24 Hours

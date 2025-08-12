@@ -57,7 +57,6 @@ export default function Contact() {
                   <Image
                     src={lokaciLogo}
                     alt="Lokaci Logo"
-                    // fill
                     width={250}
                     height={80}
                     className="object-contain"
@@ -104,6 +103,58 @@ export default function Contact() {
 
         </div>
       </section>
+
+      {/* Map Section */}
+      <section className="bg-white pb-16 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+          {/* left Map */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-lg overflow-hidden shadow-lg h-[350px] w-full"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14016.500264146013!2d77.3638825!3d28.5744074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5665f7cb7a7%3A0xaea123456789abcd!2sSector%20117%2C%20Noida%2C%20Uttar%20Pradesh%20201304!5e0!3m2!1sen!2sin!4v1691234567890"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </motion.div>
+
+          {/* right Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold mb-4">Visit Our Location</h2>
+            <p className="text-gray-700 mb-6">
+              Our main office is located in the heart of Noida. Feel free to drop by for bookings,
+              consultations, or just to say hello. We’re always happy to welcome you in person.
+            </p>
+            <div className="space-y-3">
+              <p className="flex items-center">
+                <FaMapMarkerAlt className="text-pink-500 mr-3" /> Sector 117, Noida, India
+              </p>
+              <p className="flex items-center">
+                <FaPhone className="text-pink-500 mr-3" /> +91 98765 43210
+              </p>
+              <p className="flex items-center">
+                <FaClock className="text-pink-500 mr-3" /> Mon - Sun: 9:00 AM - 8:00 PM
+              </p>
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
+
       <Footer />
     </>
   );

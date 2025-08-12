@@ -4,45 +4,28 @@ import Header from '../components/Header';
 import { useContext } from 'react';
 import { HomeContext } from '../context/HomeContext';
 import { motion } from 'framer-motion';
-
-// const features = [
-//     {
-//         icon: <FaCalendarCheck className="text-indigo-600 text-4xl mb-4" />,
-//         title: "Smart Appointment Booking",
-//         description: "Never double-book or miss an appointment. Automated reminders keep your chairs full."
-//     },
-//     {
-//         icon: <FaFileInvoice className="text-indigo-600 text-4xl mb-4" />,
-//         title: "Automated Billing & Invoicing",
-//         description: "Instant receipts and accurate billing without manual errors — faster payments, happier customers."
-//     },
-//     {
-//         icon: <FaUsers className="text-indigo-600 text-4xl mb-4" />,
-//         title: "Client Management",
-//         description: "Track preferences, visit history, and birthdays to keep your customers coming back."
-//     },
-//     {
-//         icon: <FaChartLine className="text-indigo-600 text-4xl mb-4" />,
-//         title: "Revenue & Performance Reports",
-//         description: "Get insights into your top services, busiest days, and growth trends in one click."
-//     },
-//     {
-//         icon: <FaMobileAlt className="text-indigo-600 text-4xl mb-4" />,
-//         title: "Mobile Friendly",
-//         description: "Manage your salon from anywhere — works perfectly on phones, tablets, and desktops."
-//     },
-//     {
-//         icon: <FaBell className="text-indigo-600 text-4xl mb-4" />,
-//         title: "Staff Notifications",
-//         description: "Notify team members instantly when a new booking or change happens."
-//     }
-// ];
+import FeaturesHero from '../components/features/Hero';
+import WhyChooseUs from '../components/features/WhyChoseUs';
+import TechnologyProducts from '../components/features/Tech&Pro';
+import MembershipPlans from '../components/features/Membership&Plan';
+import CallToAction from '../components/features/CallToAction';
 
 const Features = () => {
     const { benefits } = useContext(HomeContext);
     return (
         <>
+            {/* Header */}
             <Header />
+
+            {/* Features Hero Section */}
+            <FeaturesHero/>
+
+            {/* Features Choose Us Section */}
+            <WhyChooseUs/>
+
+            {/* Features Technology and Product */}
+            <TechnologyProducts/>
+            
             <section className="w-full bg-white py-16 px-6 my-20">
                 <motion.div
                     initial={{ opacity: 0, x: 50 }}
@@ -76,6 +59,8 @@ const Features = () => {
                     </div>
                 </motion.div>
             </section>
+            <MembershipPlans/>
+            <CallToAction/>
             <Footer />
         </>
     );

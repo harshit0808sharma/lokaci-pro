@@ -1,0 +1,21 @@
+import Link from "next/link";
+
+export default function CallToAction() {
+  return (
+    <section className="bg-pink-700 py-16">
+      <div className="max-w-4xl mx-auto px-6 text-center text-white">
+        <h2 className="text-4xl font-extrabold mb-4">
+          Ready to transform your look?
+        </h2>
+        <p className="text-lg mb-8">
+          Join our membership today and enjoy exclusive benefits tailored just for you.
+        </p>
+        <Link href="/appointmentbooking"
+          className="px-10 py-4 bg-white text-pink-600 font-semibold rounded-full hover:bg-pink-100 transition"
+        >
+          Book Your Appointment
+        </Link>
+      </div>
+    </section>
+  );
+}

@@ -4,9 +4,13 @@ import { Toaster } from "react-hot-toast";
 import { Montserrat } from 'next/font/google';
 
 export const metadata = {
-  title: "Lokaci Landing Page",
-  description: "This is lokaci page.",
+  title: "Lokaci",
+  description: "Your beautiful salon site",
+  icons: {
+    icon: "/assets/images/salonlogoicon.png",
+  },
 };
+
 
 const montserrat = Montserrat({
   subsets: ['latin'],

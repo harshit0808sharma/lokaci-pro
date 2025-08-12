@@ -1,94 +1,99 @@
-"use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
+'use client';
+
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+      when: "beforeChildren",
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 70,
+      damping: 20,
+      ease: 'easeInOut',
+      duration: 0.6,
+    },
+  },
+};
 
 export default function Hero() {
   return (
-    <section className="bg-white text-black min-h-screen flex items-center justify-center px-6">
-      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10">
-
-        {/* Left Content */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex-1"
+    <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 md:pt-20
+             bg-[url('/assets/images/salonImg8.jpg')] bg-cover bg-center bg-no-repeat">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-6xl w-full flex flex-col items-center text-center gap-10 text-white"
+      >
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl md:text-6xl font-bold mb-4"
         >
-          <motion.h1
-            className="text-4xl md:text-6xl font-bold mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            Stop Losing Money to <span className="text-gray-800">Salon Chaos</span>
-          </motion.h1>
+          Stop Losing Money to{' '}
+          <span className="text-yellow-300">
+            Salon Chaos
+          </span>
+        </motion.h1>
 
-          <motion.h2
-            className="text-lg md:text-xl text-gray-700 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            The only salon management platform that actually increases your revenue
-            while cutting your workload in half. Trusted by 3,000+ salons across India.
-          </motion.h2>
+        <motion.h2
+          variants={itemVariants}
+          className="text-lg md:text-xl mb-6 font-light"
+        >
+          {"The only salon management platform that actually increases your revenue while cutting your workload in half. Trusted by 3,000+ salons across India."}
+        </motion.h2>
 
-          <motion.p
-            className="text-gray-600 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
-            {"From missed appointments to manual billing nightmares - we've solved every problem that's costing you customers and sleep."}
-          </motion.p>
+        <motion.p
+          variants={itemVariants}
+          className="mb-8 text-yellow-200 font-semibold"
+        >
+          {"From missed appointments to manual billing nightmares - we've solved every problem that's costing you customers and sleep."}
+        </motion.p>
 
-          <motion.div
-            className="flex flex-wrap gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-wrap justify-center gap-4"
+        >
+          <motion.a
+            href="#pricing"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="bg-yellow-400 text-black px-6 py-3 rounded-lg hover:bg-yellow-500 transition font-semibold cursor-pointer"
           >
-            <Link
-              href="#pricing"
-              className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
-            >
-              Get My Salon Organized - ₹7,000/year
-            </Link>
-            <Link
-              href="/video"
-              className="border border-black px-6 py-3 rounded-lg hover:bg-green-500 hover:text-white transition"
-            >
-              Watch 2-Min Demo
-            </Link>
-          </motion.div>
-
-          <motion.div
-            className="mt-6 text-sm text-gray-500 italic"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.6 }}
+            Get My Salon Organized - ₹7,000/year
+          </motion.a>
+          <motion.a
+            href="/video"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="border border-yellow-400 px-6 py-3 rounded-lg hover:bg-yellow-400 hover:text-black transition font-semibold cursor-pointer"
           >
-            “Lokaci Pro pays for itself in the first month” – 97% of our customers
-          </motion.div>
+            Watch 2-Min Demo
+          </motion.a>
         </motion.div>
 
-        {/* Right Image */}
-        <motion.div
-          className="flex-1 flex justify-center"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+        <motion.p
+          variants={itemVariants}
+          className="mt-6 text-sm italic text-yellow-300"
         >
-          <Image
-            src="/assets/images/saloonImg1.jpg"
-            alt="Salon Management"
-            width={500}
-            height={500}
-            className="rounded-2xl shadow-lg w-full max-w-md object-cover"
-          />
-        </motion.div>
-      </div>
+          {"“Lokaci Pro pays for itself in the first month” – 97% of our customers"}
+        </motion.p>
+      </motion.div>
     </section>
   );
 }
+

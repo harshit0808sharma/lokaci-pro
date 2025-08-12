@@ -1,4 +1,5 @@
 import { FaBolt, FaMobileAlt, FaMoneyBillWave } from "react-icons/fa";
+import img from '../assets/images/saloonImg1.jpg'
 // import video from '../../public/assets/video/salonVideo.mp4'
 
 
@@ -91,56 +92,50 @@ export const steps = [
 
 export const plans = [
   {
-    name: "STARTER PLAN",
-    emoji: "🚀",
-    price: "₹7,000/year",
-    monthly: "₹583/month",
-    description: "Perfect for solo stylists & small salons",
+    emoji: "✨",
+    name: "Basic",
+    price: "₹999",
+    monthly: "per month",
+    description: "Perfect for starters wanting simple salon services.",
     features: [
-      "✅ Unlimited appointments & walk-ins",
-      "✅ GST-ready billing & invoicing",
-      "✅ Basic customer database",
-      "✅ WhatsApp booking confirmations",
-      "✅ Daily/weekly reports",
-      "✅ Phone & chat support"
+      "Haircut & Styling",
+      "Basic Facial Treatment",
+      "Manicure & Pedicure",
+      "Free Consultation",
     ],
-    note: "Most popular for new salon owners",
+    note: "Get Started",
     highlight: false,
   },
   {
-    name: "GROWTH PLAN",
-    emoji: "🏆",
-    price: "₹14,000/year",
-    monthly: "₹1,167/month",
-    description: "For salons ready to scale (3–10 staff)",
+    emoji: "🔥",
+    name: "Premium",
+    price: "₹1,999",
+    monthly: "per month",
+    description: "Our most popular plan with extra pampering.",
     features: [
-      "✅ Everything in Starter, plus:",
-      "✅ Advanced loyalty & membership system",
-      "✅ Inventory management with alerts",
-      "✅ 500 automated WhatsApp messages/month",
-      "✅ Staff performance analytics",
-      "✅ Customer retention campaigns",
-      "✅ Package & combo deals"
+      "Advanced Hair Treatment",
+      "Deep Facial Care",
+      "Nail Art & Spa",
+      "Priority Booking",
+      "Complimentary Gift",
     ],
-    note: "Recommended for most salons",
+    note: "Most Popular",
     highlight: true,
   },
   {
-    name: "ELITE PLAN",
     emoji: "💎",
-    price: "₹25,000/year",
-    monthly: "₹2,083/month",
-    description: "For franchises & multi-location salons",
+    name: "VIP",
+    price: "₹2,999",
+    monthly: "per month",
+    description: "Luxury experience with exclusive benefits.",
     features: [
-      "✅ Everything in Growth, plus:",
-      "✅ Unlimited locations management",
-      "✅ 2,000 WhatsApp messages/month",
-      "✅ Advanced analytics & profit reports",
-      "✅ Priority support (2-hour response)",
-      "✅ Custom integrations",
-      "✅ Dedicated account manager"
+      "All Premium Benefits",
+      "Personal Stylist",
+      "Makeup Sessions",
+      "Spa & Massage",
+      "Exclusive Discounts",
     ],
-    note: "Perfect for salon chains",
+    note: "Join VIP",
     highlight: false,
   },
 ];
@@ -230,7 +225,7 @@ export const teamMembers = [
     name: "Priya Sharma",
     role: "Senior Hair Stylist",
     bio: "Priya has over 10 years of experience in cutting-edge hairstyles and color trends. Passionate about making you look your best.",
-    photo: "",
+    image: img,
     socials: {
       instagram: "",
       facebook: "",
@@ -241,7 +236,7 @@ export const teamMembers = [
     name: "Rahul Mehta",
     role: "Makeup Artist",
     bio: "Rahul specializes in bridal and event makeup, ensuring every client shines on their special day.",
-    photo: "",
+    image: img,
     socials: {
       instagram: "",
       facebook: "",
@@ -252,7 +247,7 @@ export const teamMembers = [
     name: "Neha Gupta",
     role: "Nail Technician",
     bio: "Neha brings creativity and precision to nail art and treatments, offering the latest styles and trends.",
-    photo: "",
+    image: img,
     socials: {
       instagram: "",
       facebook: "",
@@ -263,9 +258,9 @@ export const teamMembers = [
     name: "Karan Singh",
     role: "Massage Therapist",
     bio: "Karan's expert massage techniques help you relax and rejuvenate after a busy day.",
-    photo: "",
+    image: "",
     socials: {
-      instagram: "",
+      instagram: img,
       facebook: "",
     },
   },
@@ -274,10 +269,28 @@ export const teamMembers = [
     name: "other one",
     role: "other...",
     bio: "message...",
-    photo: "",
+    image: img,
     socials: {
       instagram: "",
       facebook: "",
     },
+  },
+];
+
+export const awards = [
+  {
+    title: "Best Salon of the Year 2023",
+    description: "Recognized for excellence in hair styling and beauty services.",
+    image: "/assets/images/salonImg2.png",
+  },
+  {
+    title: "Top Rated Spa Experience",
+    description: "Awarded for outstanding customer satisfaction and luxury treatments.",
+    image: "/assets/images/salonImg2.png",
+  },
+  {
+    title: "Eco-Friendly Salon Award",
+    description: "Honored for using sustainable and cruelty-free products.",
+    image: "/assets/images/salonImg2.png",
   },
 ];
