@@ -3,8 +3,7 @@ import { FaQuoteLeft, FaStar } from 'react-icons/fa';
 import { useContext } from 'react';
 import { HomeContext } from '../context/HomeContext';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { BsProjectorFill } from 'react-icons/bs';
+import { CgProfile } from "react-icons/cg";
 
 const Testimonials = () => {
   const { testimonials } = useContext(HomeContext);
@@ -68,17 +67,9 @@ const Testimonials = () => {
 
               {/* Reviewer Info */}
               <div className="flex items-center gap-4">
-                {
-                  img.src ? (
-                    <Image
-                  src={img}
-                  alt={t.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                  ) : (
-                    <BsProjectorFill/>
-                  )
-                }
+                
+                    <CgProfile/>
+                
                 <div>
                   <p className="font-semibold text-gray-900">{t.name}</p>
                   <p className="text-sm text-gray-500">{t.salon}</p>

@@ -21,16 +21,16 @@ const technologies = [
 ];
 
 const products = [
-  { id: 1, name: "Hair Oil", image: img1 },
-  { id: 2, name: "Shampoo", image: img2 },
-  { id: 3, name: "Hair Dryer", image: img3 },
-  { id: 4, name: "Conditioner", image: img4 },
-  { id: 5, name: "Hair Serum", image: img5 },
-  { id: 6, name: "Comb Set", image: img6 },
-  { id: 7, name: "Straightener", image: img7 },
-  { id: 8, name: "Hair Spray", image: img8 },
-  { id: 9, name: "Beard Oil", image: img9 },
-  { id: 10, name: "Hair Mask", image: img10 },
+  { id: 1, name: "Hair Spray Bottle", image: img1 },
+  { id: 2, name: "Hair Comb", image: img2 },
+  { id: 3, name: "Trimmer", image: img3 },
+  { id: 4, name: "Spray Bottle", image: img4 },
+  { id: 5, name: "Hair Clipper", image: img5 },
+  { id: 6, name: "Round Hairbrush", image: img6 },
+  { id: 7, name: "Neck duster brush", image: img7 },
+  { id: 8, name: "Straight razor", image: img8 },
+  { id: 9, name: "Hair Pick Comb", image: img9 },
+  { id: 10, name: "Hair dryer", image: img10 },
 ];
 
 export default function TechnologyProducts() {
@@ -80,9 +80,9 @@ export default function TechnologyProducts() {
             ease: "linear",
           }}
         >
-          {[...products, ...products].map((product) => (
+          {[...products, ...products].map((product, index) => (
             <div
-              key={product.id + Math.random()}
+              key={`${product.id}-${index}`}
               className="flex flex-col items-center bg-gray-600 p-6 rounded-2xl min-w-[200px] shadow-xl"
             >
               <div className="w-32 h-32 relative mb-3">
