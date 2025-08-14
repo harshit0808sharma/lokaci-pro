@@ -56,7 +56,7 @@ export default function Testimonials() {
                 {Array(t.rating).fill().map((_, i) => <FaStar key={i} />)}
               </div>
 
-              <p className="text-center text-sm md:text-base italic opacity-80">"{t.text}"</p>
+              <p className="text-center text-sm md:text-base italic opacity-80">{t.text}</p>
             </div>
           ))}
         </motion.div>
