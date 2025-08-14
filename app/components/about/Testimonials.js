@@ -4,13 +4,12 @@ import { HomeContext } from '@/app/context/HomeContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useContext, useState } from 'react';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight, FiUser } from 'react-icons/fi';
 
 export default function ClientTestimonials() {
   const { testimonials } = useContext(HomeContext) || { testimonials: [] };
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Guard: if no testimonials yet, show fallback
   if (!testimonials || testimonials.length === 0) {
     return (
       <section className="bg-white py-16 text-center text-gray-500">
@@ -45,9 +44,7 @@ export default function ClientTestimonials() {
             What Our Clients Say
           </h2>
           <p className="text-gray-600 mb-6">
-            Our customers are our biggest cheerleaders! Here’s what they have to
-            say about our salon’s services, ambiance, and friendly staff. Your
-            trust keeps us going.
+            Our customers are our biggest cheerleaders! Here’s what they have to say about our salon’s services, ambiance, and friendly staff. Your trust keeps us going.
           </p>
           <p className="text-pink-500 font-semibold">
             Join hundreds of happy clients today.
@@ -70,14 +67,21 @@ export default function ClientTestimonials() {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
             >
-              <Image
-                src={image}
-                alt={name}
-                width={80}
-                height={80}
-                className="object-cover rounded-full mx-auto mb-4 border-4 border-white shadow"
-                priority={true}
-              />
+              {image?.src ? (
+                <Image
+                  src={image.src}
+                  alt={name}
+                  width={80}
+                  height={80}
+                  className="object-cover rounded-full mx-auto mb-4 border-4 border-pink-500 shadow"
+                  priority
+                />
+              ) : (
+                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-gray-300 rounded-full border-4 border-white shadow">
+                  <FiUser size={40} className="text-gray-500" />
+                </div>
+              )}
+
               <p className="text-gray-600 italic mb-4">
                 &quot;{review}&quot;
               </p>

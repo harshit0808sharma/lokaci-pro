@@ -8,13 +8,14 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPhoneAlt } from 'react-icons/fa';
 import lokaciLogo from '../../public/assets/images/lokacilogo4.png';
+import { CiLight } from "react-icons/ci";
 
 const navLinks = [
   { href: '/features', label: 'Features' },
   { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/faq', label: 'FAQ' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 const Header = () => {
@@ -130,11 +131,13 @@ const Header = () => {
 
           {/* Free Demo Button */}
           <Link
-            href="/form"
+            href="/contact"
             className="bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-gray-600"
           >
             Free Demo
           </Link>
+
+          {/* <CiLight className='text-black text-4xl cursor-pointer'/> */}
         </div>
 
         {/* Mobile Menu Icon */}
@@ -207,7 +210,7 @@ const Header = () => {
               </AnimatePresence>
 
               <Link
-                href="/form"
+                href="/contact"
                 className="bg-black text-white rounded-lg px-4 py-2 text-center hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-gray-600"
                 onClick={() => setMenuOpen(false)}
               >

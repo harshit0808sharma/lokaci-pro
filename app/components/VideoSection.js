@@ -12,7 +12,7 @@ const VideoSection = () => {
     const { url, title, description, duration, category } = videoData || {};
     return (
         <>
-            <section className="min-h-screen bg-gray-50 py-12 px-6 flex flex-col items-center">
+            <section className="min-h-screen bg-gray-50 py-20 px-6 flex flex-col items-center">
                 <div className="max-w-4xl w-full bg-white shadow-lg rounded-xl overflow-hidden">
                     {/* Video or fallback */}
                     <div className="relative bg-black">

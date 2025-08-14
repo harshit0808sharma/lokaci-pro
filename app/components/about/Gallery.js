@@ -4,11 +4,11 @@ import Image from "next/image";
 
 const galleryImages = [
   "/assets/images/salonImg5.jpg",
-  "/assets/images/salonImg6.jpg",
-  "/assets/images/salonImg5.jpg",
-  "/assets/images/salonImg6.jpg",
-  "/assets/images/salonImg5.jpg",
-  "/assets/images/salonImg6.jpg",
+  "/assets/images/gallery1.jpg",
+  "/assets/images/gallery2.jpg",
+  "/assets/images/gallery3.jpg",
+  "/assets/images/gallery4.jpg",
+  "/assets/images/gallery5.jpg",
 ];
 
 export default function SalonGallery() {
@@ -38,6 +38,8 @@ export default function SalonGallery() {
               <Image
                 src={src}
                 alt={`Salon view ${index + 1}`}
+                width={100}
+                height={100}
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
               />
             </motion.div>

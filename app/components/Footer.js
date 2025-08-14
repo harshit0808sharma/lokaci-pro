@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 import {
   FaEnvelope,
@@ -8,130 +10,131 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 
-const Footer = () => {
+const BonusAndFooter = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16 px-6">
-      <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-4 sm:grid-cols-2 grid-cols-1">
+    <section className="bg-black text-white">
+      {/* Bonus Section */}
 
-        {/* Contact Information */}
-        <div>
-          <h3 className="text-white text-xl font-semibold mb-6">Contact</h3>
-          <ul className="space-y-4 text-sm">
-            <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
-              <FaEnvelope className="text-pink-500" size={20} />
-              <Link href="/" className="hover:underline">
-                hello@lokaci.com
-              </Link>
-            </li>
-            <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
-              <FaPhone className="text-pink-500" size={20} />
-              <Link href="/" className="hover:underline">
-                +91-XXXXX-XXXXX
-              </Link>
-            </li>
-            <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
-              <FaWhatsapp className="text-green-400" size={20} />
-              <Link
-                href="/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                +91-XXXXX-XXXXX
-              </Link>
-            </li>
-            <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
-              <FaMapMarkerAlt className="text-red-400" size={20} />
-              Ahmedabad, Gujarat, India
-            </li>
-          </ul>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-16 px-6">
+        <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-4 sm:grid-cols-2 grid-cols-1">
+          {/* Contact Information */}
+          <div>
+            <h3 className="text-white text-xl font-semibold mb-6">Contact</h3>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
+                <FaEnvelope className="text-pink-500" size={20} />
+                <Link href="/" className="hover:underline">
+                  hello@lokaci.com
+                </Link>
+              </li>
+              <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
+                <FaPhone className="text-pink-500" size={20} />
+                <Link href="/" className="hover:underline">
+                  +91-XXXXX-XXXXX
+                </Link>
+              </li>
+              <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
+                <FaWhatsapp className="text-green-400" size={20} />
+                <Link href="/" className="hover:underline">
+                  +91-XXXXX-XXXXX
+                </Link>
+              </li>
+              <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
+                <FaMapMarkerAlt className="text-red-400" size={20} />
+                Ahmedabad, Gujarat, India
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-white text-xl font-semibold mb-6">
+              Quick Links
+            </h3>
+            <ul className="space-y-4 text-sm">
+              <li>
+                <Link href="/about" className="hover:text-white transition">
+                  About Lokaci
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-white transition">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-white transition">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="hover:text-white transition">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-white transition">
+                  Support Center
+                </Link>
+              </li>
+              <li>
+                <Link href="/video" className="hover:text-white transition">
+                  Book Demo
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social & Proof */}
+          <div>
+            <h3 className="text-white text-xl font-semibold mb-6">
+              Follow Us
+            </h3>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
+                <FaInstagram className="text-pink-500" size={20} />
+                <Link href="/" className="hover:underline">
+                  @lokacipro
+                </Link>
+              </li>
+              <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
+                <FaWhatsapp className="text-green-400" size={20} />
+                WhatsApp Updates
+              </li>
+              <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
+                <FaFacebook className="text-blue-600" size={20} />
+                Lokaci Pro
+              </li>
+            </ul>
+            <p className="text-xs text-gray-500 mt-8 italic">
+              🇮🇳 Proudly Made in India ❤️ for Indian Salons
+            </p>
+          </div>
+
+          {/* Mini Case Study */}
+          <div>
+            <h3 className="text-white text-xl font-semibold mb-6">
+              📈 Success Story
+            </h3>
+            <p>
+              Increased revenue by 52% and reduced admin time by 70% in just 2
+              months with Lokaci Pro. Now I can focus on what I love — making
+              customers beautiful.
+            </p>
+            <p className="text-sm font-semibold text-pink-500">
+              – Neha Gupta, Green Leaf Salon, Pune
+            </p>
+          </div>
         </div>
 
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-white text-xl font-semibold mb-6">Quick Links</h3>
-          <ul className="space-y-4 text-sm">
-            <li>
-              <Link href="/about" className="hover:text-white transition">
-                About Lokaci
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-white transition">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-white transition">
-                Terms of Service
-              </Link>
-            </li>
-            <li>
-              <Link href="/pricing" className="hover:text-white transition">
-                Pricing
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-white transition">
-                Support Center
-              </Link>
-            </li>
-            <li>
-              <Link href="/video" className="hover:text-white transition">
-                Book Demo
-              </Link>
-            </li>
-          </ul>
+        {/* Bottom bar */}
+        <div className="mt-12 border-t border-gray-800 pt-6 text-center text-xs text-gray-500 select-none">
+          &copy; {new Date().getFullYear()} Lokaci Pro. All rights reserved.
         </div>
-
-        {/* Social & Proof */}
-        <div>
-          <h3 className="text-white text-xl font-semibold mb-6">Follow Us</h3>
-          <ul className="space-y-4 text-sm">
-            <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
-              <FaInstagram className="text-pink-500" size={20} />
-              <Link
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                @lokacipro
-              </Link>
-            </li>
-            <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
-              <FaWhatsapp className="text-green-400" size={20} />
-              WhatsApp Updates
-            </li>
-            <li className="flex items-center gap-3 hover:text-white transition cursor-pointer">
-              <FaFacebook className="text-blue-600" size={20} />
-              Lokaci Pro
-            </li>
-          </ul>
-          <p className="text-xs text-gray-500 mt-8 italic">
-            🇮🇳 Proudly Made in India ❤️ for Indian Salons
-          </p>
-        </div>
-
-        {/* Mini Case Study */}
-        <div>
-          <h3 className="text-white text-xl font-semibold mb-6">📈 Success Story</h3>
-          <p>
-            Increases revenue by 52% and reduced admin time by 70% in just 2 months with Lokaci Pro. Now I can focus on what I love &mdash; making customers beautiful.
-          </p>
-
-          <p className="text-sm font-semibold text-pink-500">
-            {"– Neha Gupta, Green Leaf Salon, Pune"}
-          </p>
-        </div>
-      </div>
-
-      {/* Bottom bar */}
-      <div className="mt-12 border-t border-gray-800 pt-6 text-center text-xs text-gray-500 select-none">
-        &copy; {new Date().getFullYear()} Lokaci Pro. All rights reserved.
-      </div>
-    </footer>
+      </footer>
+    </section>
   );
 };
 
-export default Footer;
+export default BonusAndFooter;

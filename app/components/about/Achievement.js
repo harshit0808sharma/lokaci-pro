@@ -1,9 +1,10 @@
 "use client";
+
 import { HomeContext } from "@/app/context/HomeContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useContext } from "react";
-
+import { FaTrophy } from "react-icons/fa"; // Fallback icon
 
 export default function AwardsAchievements() {
   const { awards } = useContext(HomeContext);
@@ -31,17 +32,22 @@ export default function AwardsAchievements() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition"
             >
-              <Image
-                src={award.image}
-                alt={award.title}
-                className="w-20 h-20 object-contain mx-auto mb-4"
-              />
+              {award.image?.src ? (
+                <Image
+                  src={award.image.src}
+                  alt={award.title}
+                  width={80}
+                  height={80}
+                  className="object-contain mx-auto mb-4"
+                />
+              ) : (
+                <FaTrophy className="w-20 h-20 text-pink-500 mx-auto mb-4" />
+              )}
+
               <h3 className="text-lg font-semibold text-gray-800">
                 {award.title}
               </h3>
-              <p className="text-gray-600 text-sm mt-2">
-                {award.description}
-              </p>
+              <p className="text-gray-600 text-sm mt-2">{award.description}</p>
             </motion.div>
           ))}
         </div>

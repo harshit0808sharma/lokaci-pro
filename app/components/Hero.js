@@ -67,7 +67,7 @@ export default function Hero() {
           className="flex flex-wrap justify-center gap-4"
         >
           <motion.a
-            href="#pricing"
+            href="/contact"
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}

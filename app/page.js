@@ -28,7 +28,7 @@ export default function Home() {
         <FAQ/>
         <Footer/>
         <Bonus/>
-        <PromoPoster/>
+        {/* <PromoPoster/> */}
       </div>
     </>
   );

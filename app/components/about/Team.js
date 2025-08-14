@@ -2,7 +2,7 @@
 import { HomeContext } from "@/app/context/HomeContext";
 import { motion } from "framer-motion";
 import { useContext } from "react";
-
+import { FaUserCircle } from "react-icons/fa"; // Profile icon fallback
 
 export default function MeetTheTeam() {
   const { teamMembers } = useContext(HomeContext);
@@ -34,15 +34,20 @@ export default function MeetTheTeam() {
               }}
               viewport={{ once: true }}
             >
-              <motion.img
-                src={member.image.src}
-                alt={member.name}
-                className="w-32 h-32 object-cover rounded-full mx-auto mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              />
+              {member.image?.src ? (
+                <motion.img
+                  src={member.image.src}
+                  alt={member.name}
+                  className="w-32 h-32 object-cover rounded-full mx-auto mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                />
+              ) : (
+                <FaUserCircle className="w-32 h-32 text-gray-400 mx-auto mb-4" />
+              )}
+
               <h3 className="text-lg font-semibold text-gray-800">
                 {member.name}
               </h3>

@@ -1,22 +1,17 @@
 'use client'
-import Image from "next/image";
 import img from '../../public/assets/images/salonImg6.jpg';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Link from "next/link";
-import { CgProfile } from "react-icons/cg";
-import { useContext } from "react";
-import { HomeContext } from "../context/HomeContext";
 import MeetTheTeam from "../components/about/Team";
 import ClientTestimonials from "../components/about/Testimonials";
 import AwardsAchievements from "../components/about/Achievement";
 import SalonGallery from "../components/about/Gallery";
 import OurValues from "../components/about/OurValues";
-import FAQSection from "../components/about/Questions";
 import ContactSection from "../components/about/Map";
 import AboutHero from "../components/about/Hero";
 import WhatWeOffer from "../components/about/WhatWeOffer";
 import Stats from "../components/about/Stats";
+import FAQ from "../components/FAQ";
 
 export default function AboutPage() {
     return (
@@ -49,7 +44,7 @@ export default function AboutPage() {
                 <OurValues />
 
                 {/* Questions */}
-                <FAQSection />
+                <FAQ/>
 
                 {/* Contact Section */}
                 <ContactSection />

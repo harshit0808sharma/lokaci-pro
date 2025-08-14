@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-pink-50 py-20">
+    <section className="bg-white py-20">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         
         {/* Left: Image */}
@@ -17,6 +17,8 @@ export default function WhyChooseUs() {
           className="flex-1"
         >
           <Image
+            width={200}
+            height={200}
             src="/assets/images/salonImg5.jpg"
             alt="Why Choose Us"
             className="rounded-3xl shadow-lg object-cover w-full h-[400px]"
@@ -32,7 +34,7 @@ export default function WhyChooseUs() {
           className="flex-1"
         >
           <h2 className="text-4xl font-bold text-gray-800 mb-6">
-            Why Choose <span className="text-pink-500">Glamour Salon</span>?
+            Why Choose <span className="text-yellow-500">Glamour Salon</span>?
           </h2>
           <p className="text-gray-700 mb-6 leading-relaxed">
             At Glamour Salon, we combine expertise, passion, and premium care
