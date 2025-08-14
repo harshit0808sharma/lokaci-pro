@@ -18,7 +18,7 @@ export default function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold mb-4"
         >
-          Simple Pricing That Pays for Itself
+          <span className='text-yellow-500'>Simple Pricing</span> That Pays for Itself
         </motion.h2>
         
         {/* Subheadline */}

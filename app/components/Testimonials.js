@@ -1,103 +1,84 @@
-'use client'
-import { FaQuoteLeft, FaStar } from 'react-icons/fa';
-import { useContext } from 'react';
-import { HomeContext } from '../context/HomeContext';
-import { motion } from 'framer-motion';
-import { CgProfile } from "react-icons/cg";
+"use client";
+import { useState } from "react";
+import { FaUserCircle, FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
+import { motion } from "framer-motion";
 
-const Testimonials = () => {
-  const { testimonials } = useContext(HomeContext);
+const testimonialsData = [
+  { name: "Michael Jackson", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 5 },
+  { name: "Parvez Hossein", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 5 },
+  { name: "Shoikot Hasan", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 5 },
+  { name: "Jane Doe", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 4 },
+  { name: "John Smith", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 5 },
+];
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" }
-    })
-  };
+export default function Testimonials() {
+  const [index, setIndex] = useState(0);
+  const itemsPerPage = 3;
+  const cardWidth = 320;
+
+  const prev = () => setIndex(prev => (prev === 0 ? testimonialsData.length - itemsPerPage : prev - 1));
+  const next = () => setIndex(prev => (prev + itemsPerPage >= testimonialsData.length ? 0 : prev + 1));
 
   return (
-    <section className="bg-gradient-to-br from-pink-50 to-purple-50 w-full py-20 px-6">
-      <div className="max-w-6xl mx-auto text-center">
+    <div className="bg-gray-50 py-16 w-full">
+      <h2 className="text-center text-5xl font-bold mb-12">
+        Testimonials
+      </h2>
 
-        {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="relative text-4xl md:text-5xl font-bold text-gray-900 mb-14"
-        >
-          Real Salon Owners, Real Results
-          <span className="absolute left-1/2 -bottom-3 w-24 h-1 bg-pink-500 rounded-full transform -translate-x-1/2"></span>
-        </motion.h2>
-
-        {/* Cards */}
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-2 text-left">
-          {testimonials.map((t, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-              custom={index}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              whileHover={{ scale: 1.03 }}
-            >
-              {/* Quote Icon */}
-              <motion.div
-                initial={{ rotate: -10, opacity: 0 }}
-                whileInView={{ rotate: 0, opacity: 1 }}
-                transition={{ duration: 0.4 }}
-              >
-                <FaQuoteLeft className="text-indigo-500 text-3xl mb-4" />
-              </motion.div>
-
-              {/* Stars */}
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} className="text-yellow-500 text-base" />
-                ))}
-              </div>
-
-              {/* Review Text */}
-              <p className="text-gray-700 mb-6 italic leading-relaxed">{t.review}</p>
-
-              {/* Reviewer Info */}
-              <div className="flex items-center gap-4">
-                
-                    <CgProfile/>
-                
-                <div>
-                  <p className="font-semibold text-gray-900">{t.name}</p>
-                  <p className="text-sm text-gray-500">{t.salon}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* CTA */}
+      <div className="relative max-w-6xl mx-auto overflow-hidden shadow-2xl rounded-2xl p-12">
+        {/* Motion container */}
         <motion.div
-          className="mt-14"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          viewport={{ once: true }}
+          className="flex gap-6"
+          animate={{ x: -index * (cardWidth + 24) }}
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >
-          <motion.button
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.96 }}
-            className="bg-gradient-to-r from-yellow-500 to-red-500 text-white px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-2xl transition-all"
-          >
-            Join 3,000+ Happy Salons
-          </motion.button>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
+          {testimonialsData.map((t, idx) => (
+            <div
+              key={t.name}
+              className={`flex flex-col items-center rounded-2xl p-6 shadow-lg transform transition-transform duration-500 hover:scale-105 ${
+                idx === index + 1 ? "bg-gradient-to-r from-yellow-500 to-yellow-600 text-white scale-105" : "bg-white text-gray-800"
+              } w-80 flex-shrink-0`}
+            >
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-white shadow-md">
+                {t.img ? (
+                  <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-gray-300 to-gray-400">
+                    <FaUserCircle className="w-12 h-12 text-white" />
+                  </div>
+                )}
+              </div>
 
-export default Testimonials;
+              <h3 className="font-semibold text-lg md:text-xl">{t.name}</h3>
+              <p className="text-sm md:text-base opacity-80 mb-2">{t.role}</p>
+
+              <div className="flex mb-3 text-yellow-400">
+                {Array(t.rating).fill().map((_, i) => <FaStar key={i} />)}
+              </div>
+
+              <p className="text-center text-sm md:text-base italic opacity-80">"{t.text}"</p>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Navigation Arrows */}
+        {testimonialsData.length > itemsPerPage && (
+          <>
+            <button
+              onClick={prev}
+              className="absolute top-1/2 left-2 md:left-0 transform -translate-y-1/2 bg-white p-3 rounded-full shadow hover:bg-yellow-500 hover:text-white transition z-30"
+            >
+              <FaChevronLeft size={22} />
+            </button>
+            <button
+              onClick={next}
+              className="absolute top-1/2 right-2 md:right-0 transform -translate-y-1/2 bg-white p-3 rounded-full shadow hover:bg-yellow-500 hover:text-white transition z-30"
+            >
+              <FaChevronRight size={22} />
+            </button>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}

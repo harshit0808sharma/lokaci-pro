@@ -10,7 +10,7 @@ export default function CallToAction() {
         <p className="text-lg mb-8">
           Join our membership today and enjoy exclusive benefits tailored just for you.
         </p>
-        <Link href="/appointmentbooking"
+        <Link href="/contact"
           className="px-10 py-4 bg-white text-black border border-black font-semibold rounded-full hover:bg-gray-800 hover:text-gray-50 transition"
         >
           Book Your Appointment

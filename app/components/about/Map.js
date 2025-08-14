@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { Heading } from "../other/Heading";
 
 export default function ContactSection() {
   return (
@@ -13,7 +14,7 @@ export default function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
+          <Heading Heading1={"Contact"} Heading2={"Us"}/>
           <p className="text-gray-600">
             Visit Our Salon or get in touch with us for your next beauty transformation.
           </p>

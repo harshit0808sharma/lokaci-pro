@@ -51,7 +51,7 @@ const CTASection = () => {
           custom={1}
         >
           <Link
-            href="/demo"
+            href="/contact"
             className="inline-block bg-yellow-400 text-black font-semibold text-lg px-10 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition"
           >
             Start My Free Demo – See Results in 24 Hours

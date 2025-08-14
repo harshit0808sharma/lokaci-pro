@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const ProblemPromise = () => {
   const containerVariants = {
@@ -85,15 +86,15 @@ const ProblemPromise = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="mt-12">
-          <h3 className="text-2xl font-bold text-green-600">
+          <h3 className="text-2xl flex flex-col gap-5 font-bold text-green-600">
             Lokaci Pro eliminates every single one of these problems in 24 hours.
           </h3>
           <p className="text-lg text-gray-800 mt-4">
             Transform your salon from chaotic to profitable with India&apos;s most powerful salon management platform.
           </p>
-          <button className="mt-6 bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition cursor-pointer">
+          <Link href="/how-it-works" className="mt-10 bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition cursor-pointer">
             See How It Works
-          </button>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

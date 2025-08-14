@@ -44,7 +44,7 @@ export default function TechnologyProducts() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-bold text-gray-800 mb-12"
+            className="text-4xl font-bold text-gray-800 mb-12"
           >
             Our Technology & Products
           </motion.h2>

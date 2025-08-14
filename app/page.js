@@ -22,7 +22,7 @@ export default function Home() {
         <ProblemPromise/>
         <CoreBenefits/>
         <HowItWorks/>
-        <Pricing/>
+        {/* <Pricing/> */}
         <Testimonials/>
         <CTASection/>
         <FAQ/>

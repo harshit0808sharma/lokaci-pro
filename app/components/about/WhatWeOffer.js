@@ -20,7 +20,7 @@ export default function WhatWeOffer({ img }) {
           From hair styling to skincare, our team ensures you get the best experience every time you visit.
         </p>
         <Link
-          href="/appointmentbooking"
+          href="/contact"
           className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full transition"
         >
           Book an Appointment

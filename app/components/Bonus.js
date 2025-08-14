@@ -50,7 +50,7 @@ const Bonus = () => {
                 </ul>
 
                 <motion.a
-                    href="#pricing"
+                    href="/pricing"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.97 }}
                     className="inline-block bg-rose-600 text-white text-lg font-semibold px-8 py-4 rounded-full shadow-md hover:bg-rose-700 transition"
