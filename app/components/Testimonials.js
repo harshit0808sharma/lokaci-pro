@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FaUserCircle, FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const testimonialsData = [
   { name: "Michael Jackson", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 5 },
@@ -41,7 +42,7 @@ export default function Testimonials() {
             >
               <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-white shadow-md">
                 {t.img ? (
-                  <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+                  <Image src={t.img} alt={t.name} className="w-full h-full object-cover" />
                 ) : (
                   <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-gray-300 to-gray-400">
                     <FaUserCircle className="w-12 h-12 text-white" />
