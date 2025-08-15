@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaWhatsapp, FaClipboardList, FaUserFriends, FaDollarSign, FaChartBar } from 'react-icons/fa';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Link from 'next/link';
 
 const steps = [
   {
@@ -88,12 +89,12 @@ export default function HowItWorks() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.6 }}
           >
-            <a
+            <Link
               href="/contact"
               className="bg-gray-800 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-900 transition"
             >
               Get Started with Lokaci Pro
-            </a>
+            </Link>
           </motion.div>
         </section>
       </main>
