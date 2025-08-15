@@ -42,7 +42,7 @@ const ProblemPromiseSection = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-6"
         >
-          Every Day You Don't Have Lokaci Pro, You're Bleeding Money
+          {"Every Day You Don't Have Lokaci Pro, You're Bleeding Money"}
         </motion.h2>
 
         {/* Reality Check */}
@@ -52,7 +52,7 @@ const ProblemPromiseSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl text-gray-700 text-center max-w-3xl mx-auto mb-12"
         >
-          Your salon could be making 40% more revenue. Here's what's secretly killing your profits:
+          {"Your salon could be making 40% more revenue. Here's what's secretly killing your profits:"}
         </motion.p>
 
         {/* Problems Timeline */}
@@ -89,9 +89,7 @@ const ProblemPromiseSection = () => {
           <h3 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">
             Lokaci Pro eliminates every single one of these problems in 24 hours.
           </h3>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Transform your salon from chaotic to profitable with India's most powerful salon management platform.
-          </p>
+          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">{"Transform your salon from chaotic to profitable with India's most powerful salon management platform."}</p>
           <Link
             href="/how-it-works"
             className="inline-block bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition font-semibold text-lg"
