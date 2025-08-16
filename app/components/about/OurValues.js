@@ -1,28 +1,12 @@
 "use client";
+import { HomeContext } from "@/app/context/HomeContext";
 import { motion } from "framer-motion";
+import { useContext } from "react";
 
-const values = [
-  {
-    title: "Customer First",
-    description:
-      "Every service is tailored to your needs, ensuring you leave feeling confident and beautiful.",
-    icon: "💖",
-  },
-  {
-    title: "Sustainability",
-    description:
-      "We use eco-friendly and cruelty-free products to protect your beauty and the planet.",
-    icon: "🌿",
-  },
-  {
-    title: "Excellence",
-    description:
-      "Our skilled stylists undergo continuous training to deliver the highest quality service.",
-    icon: "🏆",
-  },
-];
 
 export default function OurValues() {
+  const { values } = useContext(HomeContext);
+  
   return (
     <section className="bg-gray-100 py-16">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">

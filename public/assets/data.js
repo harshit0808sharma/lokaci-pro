@@ -300,3 +300,24 @@ export const awards = [
     image: "/assets/images/salonImg2.png",
   },
 ];
+
+export const values = [
+  {
+    title: "Customer First",
+    description:
+      "Every service is tailored to your needs, ensuring you leave feeling confident and beautiful.",
+    icon: "💖",
+  },
+  {
+    title: "Sustainability",
+    description:
+      "We use eco-friendly and cruelty-free products to protect your beauty and the planet.",
+    icon: "🌿",
+  },
+  {
+    title: "Excellence",
+    description:
+      "Our skilled stylists undergo continuous training to deliver the highest quality service.",
+    icon: "🏆",
+  },
+];

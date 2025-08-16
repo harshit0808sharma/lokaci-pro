@@ -14,32 +14,24 @@ export default function StatsSection() {
 
       {/* Stats */}
       <div className="mt-12 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-        
-        {/* 1 million+ */}
         <div>
           <p className="text-4xl md:text-5xl font-bold">
             1 <span className="text-yellow-500">Million+</span>
           </p>
           <p className="mt-2 text-gray-700">Appointments booked</p>
         </div>
-
-        {/* 1120+ salons */}
         <div>
           <p className="text-4xl md:text-5xl font-bold">
             1200+ <span className="text-yellow-500">Salons</span>
           </p>
           <p className="mt-2 text-gray-700">using our platform</p>
         </div>
-
-        {/* 130,000+ partners */}
         <div>
           <p className="text-4xl md:text-5xl font-bold">
             130,000+
           </p>
           <p className="mt-2 text-gray-700">partner businesses</p>
         </div>
-
-        {/* 45K+ stylists */}
         <div>
           <p className="text-4xl md:text-5xl font-bold">
             45K+
