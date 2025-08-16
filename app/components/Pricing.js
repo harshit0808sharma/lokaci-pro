@@ -41,7 +41,7 @@ export default function Pricing() {
               transition={{ delay: idx * 0.2, duration: 0.7 }}
               className={`relative rounded-2xl p-8 shadow-lg border ${
                 plan.highlight
-                  ? 'bg-green-500 text-black border-red-400'
+                  ? 'bg-white text-black border-red-400'
                   : 'bg-gray-100 border-gray-700'
               }`}
             >

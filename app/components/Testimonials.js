@@ -1,97 +1,123 @@
 "use client";
-import { useState, useEffect } from "react";
-import { FaUserCircle, FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { useContext, useState } from "react";
+import { FaArrowLeft, FaArrowRight, FaStar, FaUserCircle } from "react-icons/fa";
 import Image from "next/image";
+import { HomeContext } from "../context/HomeContext";
 import { Heading } from "./other/Heading";
+import { motion, AnimatePresence } from "framer-motion";
 
-const testimonialsData = [
-  { name: "Michael Jackson", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 5 },
-  { name: "Parvez Hossein", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 5 },
-  { name: "Shoikot Hasan", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 5 },
-  { name: "Jane Doe", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 4 },
-  { name: "John Smith", role: "CEO Of Company", text: "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been industry's.", img: "", rating: 5 },
-];
-
-export default function Testimonials() {
+export default function Review() {
+  const { testimonials } = useContext(HomeContext);
   const [index, setIndex] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
-  const cardWidth = 320;
-  const gap = 24; // same as `gap-6`
 
-  // Responsive items per page
-  useEffect(() => {
-    const updateItems = () => {
-      if (window.innerWidth < 640) setItemsPerPage(1);      // mobile
-      else if (window.innerWidth < 1024) setItemsPerPage(2); // tablet
-      else setItemsPerPage(3);                              // desktop
-    };
+  const prev = () => {
+    setIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
 
-    updateItems();
-    window.addEventListener("resize", updateItems);
-    return () => window.removeEventListener("resize", updateItems);
-  }, []);
+  const next = () => {
+    setIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
-  const prev = () => setIndex(prev => (prev === 0 ? testimonialsData.length - itemsPerPage : prev - 1));
-  const next = () => setIndex(prev => (prev + itemsPerPage >= testimonialsData.length ? 0 : prev + 1));
+  const renderStars = (count) => (
+    <div className="flex justify-center text-yellow-400">
+      {Array.from({ length: 5 }, (_, i) => (
+        <FaStar
+          key={i}
+          className={`text-xl ${i < count ? "opacity-100" : "opacity-30"}`}
+        />
+      ))}
+    </div>
+  );
+
+  const renderProfile = (img) =>
+    img ? (
+      <Image
+        src={img}
+        alt="Reviewer"
+        width={56}
+        height={56}
+        className="w-14 h-14 rounded-full object-cover border border-gray-400"
+      />
+    ) : (
+      <FaUserCircle className="text-gray-500 w-14 h-14" />
+    );
+
+  const prevIndex = (index - 1 + testimonials.length) % testimonials.length;
+  const nextIndex = (index + 1) % testimonials.length;
 
   return (
-    <div className="bg-gray-50 py-16 w-full text-center">
-      <Heading Heading1={"Testimonials"} Heading2={""}/>
+    <div className="min-h-screen flex flex-col gap-10 items-center bg-white md:px-20 py-20 text-black">
+      {/* Heading */}
+      <Heading Heading1={"Testimonials"} Heading2={""} />
 
-      <div className="relative max-w-6xl mx-auto overflow-hidden shadow-2xl rounded-2xl p-6 sm:p-12">
-        {/* Motion container */}
+      {/* Review Slider */}
+      <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+        {/* Previous User */}
         <motion.div
-          className="flex gap-6"
-          animate={{ x: -index * (cardWidth + gap) }}
-          transition={{ type: "spring", stiffness: 100, damping: 20 }}
+          key={prevIndex}
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          className="w-24 h-24 md:w-28 md:h-28 bg-gray-100 rounded-lg flex flex-col items-center justify-center shadow-inner"
         >
-          {testimonialsData.map((t, idx) => (
-            <div
-              key={t.name}
-              className={`flex flex-col items-center rounded-2xl p-6 shadow-lg transition-transform duration-500 hover:scale-105 
-              ${idx === index + 1 ? "bg-gradient-to-r from-yellow-500 to-yellow-600 text-white scale-105" : "bg-white text-gray-800"} 
-              w-80 flex-shrink-0`}
-            >
-              <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-white shadow-md">
-                {t.img ? (
-                  <Image src={t.img} alt={t.name} className="w-full h-full object-cover" />
-                ) : (
-                  <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-gray-300 to-gray-400">
-                    <FaUserCircle className="w-12 h-12 text-white" />
-                  </div>
-                )}
-              </div>
-
-              <h3 className="font-semibold text-lg md:text-xl">{t.name}</h3>
-              <p className="text-sm md:text-base opacity-80 mb-2">{t.role}</p>
-
-              <div className="flex mb-3 text-yellow-400">
-                {Array(t.rating).fill().map((_, i) => <FaStar key={i} />)}
-              </div>
-
-              <p className="text-center text-sm md:text-base italic opacity-80">{t.text}</p>
-            </div>
-          ))}
+          {renderProfile(testimonials[prevIndex].img)}
+          <span className="mt-1 text-xs text-gray-800">
+            {testimonials[prevIndex].name}
+          </span>
         </motion.div>
 
-        {/* Navigation Arrows */}
-        {testimonialsData.length > itemsPerPage && (
-          <>
-            <button
-              onClick={prev}
-              className="absolute top-1/2 left-2 md:left-0 transform -translate-y-1/2 bg-white p-3 rounded-full shadow hover:bg-yellow-500 hover:text-white transition z-30"
-            >
-              <FaChevronLeft size={22} />
-            </button>
-            <button
-              onClick={next}
-              className="absolute top-1/2 right-2 md:right-0 transform -translate-y-1/2 bg-white p-3 rounded-full shadow hover:bg-yellow-500 hover:text-white transition z-30"
-            >
-              <FaChevronRight size={22} />
-            </button>
-          </>
-        )}
+        {/* Left Arrow */}
+        <button
+          onClick={prev}
+          className="text-3xl text-black hover:text-sky-400 transition"
+        >
+          <FaArrowLeft />
+        </button>
+
+        {/* Center Review Card */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -40, scale: 0.9 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="w-full max-w-lg bg-gray-100 backdrop-blur-md text-black p-6 rounded-xl shadow-xl text-center space-y-5 border border-gray-800"
+          >
+            <div className="flex justify-center">
+              {renderProfile(testimonials[index].img)}
+            </div>
+            <h4 className="text-lg font-bold">{testimonials[index].name}</h4>
+            {renderStars(testimonials[index].rating)}
+            <p className="text-gray-700">{testimonials[index].review}</p>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Right Arrow */}
+        <button
+          onClick={next}
+          className="text-3xl text-black hover:text-sky-400 transition"
+        >
+          <FaArrowRight />
+        </button>
+
+        {/* Next User */}
+        <motion.div
+          key={nextIndex}
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          className="w-24 h-24 md:w-28 md:h-28 bg-gray-100 rounded-lg flex flex-col items-center justify-center shadow-inner"
+        >
+          {renderProfile(testimonials[nextIndex].img)}
+          <span className="mt-1 text-xs text-gray-800">
+            {testimonials[nextIndex].name}
+          </span>
+        </motion.div>
       </div>
     </div>
   );

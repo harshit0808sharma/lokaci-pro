@@ -150,26 +150,31 @@ export const testimonials = [
   {
     name: "Priya Sharma",
     salon: "Glamour Studio, Mumbai",
-    review:
-      "My revenue increased by 45% in just 3 months. The loyalty system brings customers back automatically, and I finally know which services are actually profitable.",
+    review: "My revenue increased by 45% in just 3 months. The loyalty system brings customers back automatically, and I finally know which services are actually profitable.",
+    img: "",
+    rating: 5
   },
+  
   {
     name: "Rajesh Kumar",
     salon: "Hair & Care Franchise (12 locations), Delhi",
-    review:
-      "Managing 12 salons was a nightmare. Now I can see everything from one dashboard. My managers love it, and I'm saving 20+ hours every week.",
+    review: "Managing 12 salons was a nightmare. Now I can see everything from one dashboard. My managers love it, and I'm saving 20+ hours every week.",
+    img: "",
+    rating: 5
   },
   {
     name: "Meera Patel",
     salon: "Scissors & Style, Ahmedabad",
-    review:
-      "The WhatsApp automation alone saves me 2 hours daily. Customers love getting automatic reminders, and my no-show rate dropped by 60%.",
+    review: "The WhatsApp automation alone saves me 2 hours daily. Customers love getting automatic reminders, and my no-show rate dropped by 60%.",
+    img: "",
+    rating: 5
   },
   {
     name: "Vikram Singh",
     salon: "The Salon Hub, Bangalore",
-    review:
-      "I was skeptical about salon software, but Lokaci Pro actually increased my profits from day one. The GST billing saves me thousands in accountant fees.",
+    review: "I was skeptical about salon software, but Lokaci Pro actually increased my profits from day one. The GST billing saves me thousands in accountant fees.",
+    img: "",
+    rating: 5
   },
 ];
 

@@ -203,7 +203,7 @@ const Header = () => {
       </div>
       <button
         onClick={() => setIsOpenChat(!isOpenChat)}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-yellow-500 text-white shadow-lg flex items-center justify-center hover:bg-yellow-600 transition"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-yellow-500 text-white shadow-lg flex items-center justify-center hover:bg-yellow-600 transition"
       >
         {isOpenChat ? <FaTimes className="text-2xl" /> : <BsChat className="text-2xl" />}
       </button>
