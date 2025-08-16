@@ -103,6 +103,7 @@ const Header = () => {
     if (e.key === "Enter") sendMessage();
   };
 
+
   return (
     <header className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between relative">
@@ -119,7 +120,7 @@ const Header = () => {
               key={href}
               href={href}
               ref={(el) => (navRefs.current[index] = el)}
-              className={`relative px-2 py-1 rounded hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${pathname === href ? 'text-blue-500 font-semibold' : ''
+              className={`relative px-2 py-1 rounded hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition ${pathname === href ? 'text-blue-500 font-semibold' : ''
                 }`}
             >
               {label}
@@ -202,7 +203,7 @@ const Header = () => {
       </div>
       <button
         onClick={() => setIsOpenChat(!isOpenChat)}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-yellow-600 text-white shadow-lg flex items-center justify-center hover:bg-yellow-700 transition"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-yellow-500 text-white shadow-lg flex items-center justify-center hover:bg-yellow-600 transition"
       >
         {isOpenChat ? <FaTimes className="text-2xl" /> : <BsChat className="text-2xl" />}
       </button>
@@ -280,7 +281,7 @@ const Header = () => {
                 key={href}
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className={`block px-3 py-2 rounded hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${pathname === href ? 'text-blue-500 font-semibold' : ''
+                className={`block px-3 py-2 rounded hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition ${pathname === href ? 'text-yellow-500 font-semibold' : ''
                   }`}
               >
                 {label}

@@ -7,14 +7,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 const FAQ = () => {
     const { faqs } = useContext(HomeContext);
     const [openIndex, setOpenIndex] = useState(null);
+    const [visibleItem, setVisibleItems] = useState(false);
 
     const toggleFaq = (index) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
+    const showItems = visibleItem ? faqs : faqs.slice(0, 4);
+
     return (
         <>
-            <section className="bg-white py-16 px-6 w-full my-20">
+            <section className="bg-white py-16 px-6 w-full my-20 text-center">
                 <div className="max-w-4xl mx-auto">
                     <motion.h2
                         initial={{ opacity: 0, y: -20 }}
@@ -27,7 +30,7 @@ const FAQ = () => {
                     </motion.h2>
 
                     <div className="space-y-4">
-                        {faqs.map((faq, index) => {
+                        {showItems.map((faq, index) => {
                             const isOpen = index === openIndex;
                             return (
                                 <motion.div
@@ -92,6 +95,7 @@ const FAQ = () => {
                         })}
                     </div>
                 </div>
+                <button onClick={()=> setVisibleItems(!visibleItem)} className='bg-yellow-500 py-2 px-4 rounded-full text-black text-xl font-bold shadow-xl my-10 hover:bg-yellow-600 border-2 border-yellow-600'>{visibleItem ? "Show Less": "Show More"}</button>
             </section>
         </>
     );

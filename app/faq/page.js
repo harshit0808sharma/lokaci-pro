@@ -4,17 +4,38 @@ import Header from "@/app/components/Header";
 import Link from "next/link";
 import Hero from "../components/other/Hero";
 import FAQ from "../components/FAQ";
+import toast from "react-hot-toast";
+import { useState } from "react";
 
 export default function FaqPage() {
+    const [email, setEmail] = useState("");
+    const [error, setError] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) {
+            setError("Email is required");
+        } else if (!emailRegex.test(email)) {
+            setError("Please enter a valid email");
+        } else {
+            setError("");
+            console.log("Subscribed with:", email);
+            toast.success("Thank you for subscribing!");
+        }
+        setEmail("")
+    };
+
 
     return (
         <>
             <Header />
             {/* Hero Section */}
-            <Hero heading={"Frequently Asked"} hightlight={"Questions"} paragraph={"Find answers to the most common questions about our services, bookings, and policies."}/>
+            <Hero heading={"Frequently Asked"} hightlight={"Questions"} paragraph={"Find answers to the most common questions about our services, bookings, and policies."} />
 
             {/* FAQ Section */}
-            <FAQ/>
+            <FAQ />
 
             {/* contact support */}
             <section className="bg-gray-100 text-black py-16 px-6">
@@ -25,7 +46,7 @@ export default function FaqPage() {
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-block bg-pink-600 text-white font-semibold px-8 py-3 rounded-full hover:bg-pink-700 transition"
+                        className="inline-block bg-yellow-500 text-white font-semibold px-8 py-3 rounded-full hover:bg-yellow-600 transition"
                         aria-label="Email Glamour Salon Support"
                     >
                         Contact Support
@@ -39,23 +60,26 @@ export default function FaqPage() {
                     <p className="mb-6 max-w-xl mx-auto">
                         Subscribe to our newsletter for the latest salon tips, offers, and FAQs.
                     </p>
-                    <form className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+                    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
                         <input
                             type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
-                            className="rounded-full border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-600 flex-grow"
+                            className={`rounded-full border px-4 py-3 focus:outline-none focus:ring-2 flex-grow ${error ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-yellow-600"
+                                }`}
                             aria-label="Email address"
                         />
+
                         <button
                             type="submit"
-                            className="bg-pink-600 text-white rounded-full px-6 py-3 font-semibold hover:bg-pink-700 transition"
+                            className="bg-yellow-500 text-white rounded-full px-6 py-3 font-semibold hover:bg-yellow-600 transition"
                         >
                             Subscribe
                         </button>
                     </form>
                 </div>
             </section>
-
 
             <Footer />
         </>

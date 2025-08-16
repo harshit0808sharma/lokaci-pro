@@ -10,6 +10,10 @@
     opacity: 0.3;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 .animate-ping-dot {
   animation: ping-dot 1.2s infinite ease-in-out;

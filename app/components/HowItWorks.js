@@ -4,51 +4,43 @@ import { useContext } from "react";
 import { HomeContext } from "../context/HomeContext";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { FaCheckCircle } from "react-icons/fa";
+import { Heading } from "./other/Heading";
 
 const HowItWorks = () => {
   const { steps } = useContext(HomeContext);
 
   return (
-    <section className="bg-gray-100 w-full py-16 px-6">
-      <div className="max-w-5xl mx-auto text-center">
+    <section className="bg-gradient-to-b from-gray-100 to-white w-full py-20 px-6">
+      <div className="max-w-6xl mx-auto text-center">
         {/* Heading */}
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold text-black mb-12"
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          From Chaos to Cash Flow in 3 Simple Steps
-        </motion.h2>
+        <Heading Heading1={" From Chaos to Cash Flow in "} Heading2={" 3 Simple Steps "}/>
 
         {/* Steps Grid */}
-        <div className="grid md:grid-cols-3 gap-8 text-left">
+        <div className="grid md:grid-cols-3 gap-10 relative">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className="bg-white text-black p-6 rounded-xl shadow-md hover:shadow-lg transition"
+              className="bg-white text-black p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.5, delay: index * 0.3 }}
             >
-              {/* Step Title */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="text-indigo-400">{step.icon}</div>
-                <h3 className="text-xl font-semibold">{step.title}</h3>
+              {/* Step Number & Icon */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-indigo-500 text-white text-xl font-bold">
+                  {index + 1}
+                </div>
+                <div className="text-indigo-500 text-2xl">{step.icon}</div>
+                <h3 className="text-2xl font-semibold">{step.title}</h3>
               </div>
 
               {/* Step Points */}
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-3">
                 {step.points.map((point, i) => (
-                  <li key={i}>
-                    {point.startsWith("*") && point.endsWith("*") ? (
-                      <em className="block text-sm text-gray-800">
-                        {point.replace(/\*/g, "")}
-                      </em>
-                    ) : (
-                      "• " + point
-                    )}
+                  <li key={i} className="flex items-center gap-2 text-gray-700">
+                    <FaCheckCircle className="text-green-500" />
+                    <span>{point}</span>
                   </li>
                 ))}
               </ul>
@@ -58,13 +50,16 @@ const HowItWorks = () => {
 
         {/* CTA */}
         <motion.div
-          className="mt-12"
-          initial={{ opacity: 0, y: 20 }}
+          className="mt-16"
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: steps.length * 0.2 }}
+          transition={{ duration: 0.6, delay: steps.length * 0.3 }}
         >
-          <Link href="/contact" className="bg-black text-white border border-white px-6 py-3 rounded-md hover:bg-white hover:text-black transition">
-            Try It Free – No Setup Cost
+          <Link
+            href="/contact"
+            className="inline-block bg-black text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition"
+          >
+           {" Try It Free – No Setup Cost "}
           </Link>
         </motion.div>
       </div>
